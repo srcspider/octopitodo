@@ -3,7 +3,7 @@ For installation instructions read [INSTALL.md](INSTALL.md).
 Octopi • [TodoMVC](http://todomvc.com)
 ======================================
 
-A TodoMVC sample built with Octopi, dart frontend framework.
+A TodoMVC sample built with Octopi, dart frontend library.
 
 Octopi targets user friendly interface design.
 
