@@ -1,4 +1,4 @@
-For installation instructions read (INSTALL.md)[INSTALL.md].
+For installation instructions read [INSTALL.md](INSTALL.md).
 
 Octopi • [TodoMVC](http://todomvc.com)
 ======================================
