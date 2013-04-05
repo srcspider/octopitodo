@@ -1,0 +1,5 @@
+# ignore everything
+pubspec.lock
+packages/*
+*.js.deps
+*.js.map

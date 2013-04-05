@@ -1,0 +1,39 @@
+<!--
+  For compatibility with TodoMVC conventions the following does not follow
+  Octopi naming or structure conventions.
+  -->
+
+<div class="TodoList" id="todoapp">
+
+  <div id="header">
+    <h1 class="TodList-header"></h1>
+    <input class="TodoList-input" id="new-todo" placeholder="What needs to be done?" autofocus>
+  </div>
+
+  <!-- This section should be hidden by default and shown when there are todos -->
+  <div id="main">
+    <input class="TodoList-toggle-all" id="toggle-all" type="checkbox">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="TodoList-items" id="todo-list"></ul>
+  </div>
+
+  <!-- This footer should hidden by default and shown when there are todos -->
+  <div class="TodoList-footer" id="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="TodoList-count" id="todo-count"><strong>1</strong> item left</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul id="filters">
+      <li>
+        <a class="TodoList-show-all selected" href="#/">All</a>
+      </li>
+      <li>
+        <a class="TodoList-show-active" href="#/active">Active</a>
+      </li>
+      <li>
+        <a class="TodoList-show-completed" href="#/completed">Completed</a>
+      </li>
+    </ul>
+    <button id="TodoList-clear-completed clear-completed">Clear completed (1)</button>
+  </div>
+
+</div>

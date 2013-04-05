@@ -1,0 +1,6 @@
+name: Octopi Todo
+description: Ocotopi TodoMVC sample
+
+dependencies:
+  browser: any
+  js: { hosted: js }
