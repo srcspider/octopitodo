@@ -16,9 +16,12 @@ class Environment {
     templatecache;
 
   Environment.from({
-    AssetLoaderFunc this._assets,
+    AssetLoaderFunc assets,
     LinkedHashMap<String, ClassifierFunc> this.classifiers
-  });
+  }) {
+    this._assets = assets;
+    this.templatecache = new LinkedHashMap<String, Element>();
+  }
 
   // -------------------------------------------------------------------------
   // Retrieval

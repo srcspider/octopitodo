@@ -21,7 +21,7 @@ class Doodad extends Marionette {
   Doodad(Element this.entrypoint, String name, [String group]) : super(name, group);
 
   /**
-   * Create a root element.
+   * Create a main element.
    */
   Future<Element> make() {
     return new Future.of(() => new Element.html('<span>[${this.singular} placeholder]</span>'));

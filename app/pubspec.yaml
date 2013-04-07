@@ -1,6 +1,8 @@
-name: Octopi Todo
+name: octopitodo
+version: 0.0.0
+author: srcspider
 description: Ocotopi TodoMVC sample
-
 dependencies:
+  js: any
   browser: any
-  js: { hosted: js }
+  web_ui: any

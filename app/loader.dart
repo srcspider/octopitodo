@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'dart:async';
-import 'dart:http';
 
 import 'octopi/lib.dart';
 import 'tododart/app.dart';
@@ -15,7 +14,7 @@ import 'tododart/app.dart';
  */
 Future<Element> static_assets(String key) {
   return HttpRequest
-    .getString("assets/${key}")
+    .getString("assets/${key}.html")
     .then((String rawtemplate) => new Element.html(rawtemplate));
 }
 
