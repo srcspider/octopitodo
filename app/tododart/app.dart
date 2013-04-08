@@ -7,5 +7,5 @@ import 'dart:collection';
 import '../octopi/lib.dart';
 
 part 'doodads/Todo.dart';
-part 'doodads/TodoList.dart';
+part 'wrappers/TodoList.dart';
 

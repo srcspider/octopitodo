@@ -1,16 +1,23 @@
 <!--
+
   For compatibility with TodoMVC conventions the following does not follow
-  Octopi naming or structure conventions.
+  Octopi conventions.
+
+  Used for compatiblity with todomvc-common, but...
+    - style should not dependent on browser style
+    - a class should be used for setting display: none or some other visibility
+    - when in editable mode borders shouldn't just randomly dissapear
+
   -->
 
-<li class="Todo">
+<li>
 
   <div class="view">
-    <input class="Todo-toggle toggle" type="checkbox" checked>
-    <label class="Todo-label"></label>
-    <button class="Todo-delete destroy"></button>
+    <input class="toggle" type="checkbox">
+    <label></label>
+    <button class="destroy"></button>
   </div>
 
-  <input class="Todo-message edit" value="">
+  <input class="edit" value="">
 
 </li>

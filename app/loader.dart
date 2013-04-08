@@ -16,7 +16,7 @@ Future<Element> static_assets(String key) {
   return HttpRequest
     .getString("assets/${key}.html")
     .then((String rawtemplate) => new Element.html(rawtemplate));
-}
+} // func
 
 /**
  * ...
@@ -28,8 +28,8 @@ void main() {
     assets: static_assets,
     // classifiers
     classifiers: {
-      'TodoList' : (Element e) => new TodoList(e),
-      'Todo'     : (Element e) => new Todo(e),
+      // !! only wrappers are required to have a classifier
+      'TodoList' : () => new TodoList(),
     }
   );
 

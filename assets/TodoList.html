@@ -1,39 +1,75 @@
 <!--
+
   For compatibility with TodoMVC conventions the following does not follow
-  Octopi naming or structure conventions.
+  Octopi conventions.
+
+  Used for compatiblity with todomvc-common, but...
+    - html5 tags should not be used
+    - ids should not be used
+    - style should not dependent on browser style
+    - a class should be used for setting display: none or some other visibility
+    - clear completed should should show a pointer cursor, so should delete, 
+    check for todos and check all; or all, active, complete should not show the 
+    pointer.
+    - "X items left" should show text select or everything else that's not an 
+    input should not show text select (ie. title, footer, etc)
+    - style should not dependent on scripting (ie. main should not need to be
+    hidden; an empty main should simply display appropriatly)
+    - selectable text should not be cut by selection (eg. title)
+    - double click on empty space in todo should not result in edit
+
+  Alterations
+    - several "o-" classes have been added for targetting; since everything
+      needs to work even when the context is not persistent. How the context
+      achieves persistence is also irrelevant (routing is simply an option)
+    - data-singular, data-plural inserted to show basic translation approuch;
+      this will not work under all circumstances (eg. if you have two variables
+      in the translation this approuch will not work; for really complex 
+      translations you can simply compile them and make a request to the server)
+
   -->
 
-<div class="TodoList" id="todoapp">
+<section id="todoapp">
 
-  <div id="header">
-    <h1 class="TodList-header"></h1>
-    <input class="TodoList-input" id="new-todo" placeholder="What needs to be done?" autofocus>
-  </div>
+  <header id="header">
+    <h1>todos</h1>
+    <input id="new-todo" placeholder="What needs to be done?" autofocus>
+  </header>
 
-  <!-- This section should be hidden by default and shown when there are todos -->
-  <div id="main">
-    <input class="TodoList-toggle-all" id="toggle-all" type="checkbox">
+  <!--
+    This section should be hidden by default and shown when there are todos
+    -->
+  <section id="main">
+    <input class="o-toggle-all" id="toggle-all" type="checkbox">
     <label for="toggle-all">Mark all as complete</label>
-    <ul class="TodoList-items" id="todo-list"></ul>
-  </div>
+    <ul id="todo-list"></ul>
+  </section>
 
   <!-- This footer should hidden by default and shown when there are todos -->
-  <div class="TodoList-footer" id="footer">
+  <footer id="footer">
     <!-- This should be `0 items left` by default -->
-    <span class="TodoList-count" id="todo-count"><strong>1</strong> item left</span>
+    <span id="todo-count" 
+          data-singular="<strong>:in</strong> item left"
+          data-plural="<strong>:in</strong> items left">
+      <strong>0</strong> items left
+    </span>
     <!-- Remove this if you don't implement routing -->
     <ul id="filters">
       <li>
-        <a class="TodoList-show-all selected" href="#/">All</a>
+        <a class="o-show-all selected" href="#/">All</a>
       </li>
       <li>
-        <a class="TodoList-show-active" href="#/active">Active</a>
+        <a class="o-show-active" href="#/active">Active</a>
       </li>
       <li>
-        <a class="TodoList-show-completed" href="#/completed">Completed</a>
+        <a class="o-show-completed" href="#/completed">Completed</a>
       </li>
     </ul>
-    <button id="TodoList-clear-completed clear-completed">Clear completed (1)</button>
-  </div>
+    <button id="clear-completed"
+            data-singular="Clear completed (:in)"
+            data-plural="Clear completed (:in)">
+      Clear completed (0)
+    </button>
+  </footer>
 
-</div>
+</section>

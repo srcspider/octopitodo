@@ -23,21 +23,17 @@ class Application {
     // find all top level subject entities
     for (final Element i in contexts) {
       String subject = i.attributes['data-octopi-context'];
-      Doodad doodad = this.env.classifiers[subject](i);
+      Doodad doodad = this.env.classifiers[subject]();
+      doodad.env = this.env;
+
       if (i.classes.contains('persistent')) {
         doodad.enable_persistence();
       }
-      
-      doodad.env = this.env;
 
       doodad.make().then((Element e) {
         i.append(e);
       });
     }
-    
-//    contexts.every((Element i) {
-//      
-//    });
   }
 
 } // class

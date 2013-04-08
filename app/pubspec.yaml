@@ -5,4 +5,4 @@ description: Ocotopi TodoMVC sample
 dependencies:
   js: any
   browser: any
-  web_ui: any
+  uuid: 0.1.2

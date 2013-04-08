@@ -10,7 +10,7 @@ class Doodad extends Marionette {
     name, group;
 
   Element
-    entrypoint;
+    source;
 
   bool
     persistent;
@@ -18,13 +18,39 @@ class Doodad extends Marionette {
   Environment
     env;
 
-  Doodad(Element this.entrypoint, String name, [String group]) : super(name, group);
+  Doodad(String name, [String group]) : super(name, group);
 
   /**
    * Create a main element.
    */
   Future<Element> make() {
-    return new Future.of(() => new Element.html('<span>[${this.singular} placeholder]</span>'));
+    return this.env.template(this.ccsingular()).then((Element e) {
+      this.source = e;
+      this.install();
+
+      return this.source;
+    });
+  }
+
+  /**
+   * ...
+   */
+  void install() {
+    // do nothing
+  }
+
+  /**
+   * ...
+   */
+  void uninstall() {
+    this.source.remove();
+  }
+
+  /**
+   * ...
+   */
+  void render() {
+
   }
 
   // --------------------------------------------------------------------------
