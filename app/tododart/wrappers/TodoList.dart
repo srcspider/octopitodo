@@ -189,6 +189,13 @@ class TodoList extends Doodad {
     else { // no completed todos
       this.clearcomplete.style.display = 'none';
     }
+
+    if (completed == this.todos.length) {
+      this.toggle_all.checked = true;
+    }
+    else {
+      this.toggle_all.checked = false;
+    }
   }
 
   /**
