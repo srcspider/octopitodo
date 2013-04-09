@@ -321,6 +321,7 @@ class TodoList extends Doodad {
    * ...
    */
   void remove_todo(Todo todo) {
+    todo.uninstall();
     this.todos.remove(todo);
     this.render();
   }

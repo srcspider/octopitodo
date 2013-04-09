@@ -70,6 +70,7 @@ class Todo extends Doodad {
     // delete
     this.delete = this.source.query('.destroy');
     this.delete.onClick.listen((MouseEvent e) => this.todolist.remove_todo(this));
+
     // input
     this.input = this.source.query('input.edit');
     this.label.onDoubleClick.listen((MouseEvent e) => this.todolist.edit_todo(this));
@@ -84,7 +85,6 @@ class Todo extends Doodad {
    */
   void uninstall() {
     super.uninstall();
-    this.todolist.remove_todo(this);
   }
 
   // --------------------------------------------------------------------------
