@@ -1,8 +1,9 @@
 name: octopitodo
-version: 0.0.0
+version: 0.1.0
 author: srcspider
 description: Ocotopi TodoMVC sample
 dependencies:
   js: any
   browser: any
+  octopi: 0.1.0
   uuid: 0.1.2

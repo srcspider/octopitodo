@@ -1,7 +1,7 @@
 import 'dart:html';
 import 'dart:async';
 
-import 'octopi/lib.dart';
+import 'package:octopi/octopi.dart';
 import 'tododart/app.dart';
 
 /**
